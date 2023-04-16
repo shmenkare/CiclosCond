@@ -201,7 +201,9 @@ namespace HelloWorld
 					Console.WriteLine("Lo lograste perro pulsa (s) para salir");
 				}
 				
-				conf = Convert.ToChar(Console.In.Read());
+				conf = Convert.ToChar(Console.ReadLine());
+
+				Console.Clear();
 
 			} while (conf != 's');
 
