@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 
@@ -177,7 +178,7 @@ namespace HelloWorld
 
 			//PRACTICA
 
-			Random x = new Random();
+			/*Random x = new Random();
 
 			int a = x.Next(0, 5);
 
@@ -208,11 +209,41 @@ namespace HelloWorld
 			} while (conf != 's');
 
 
-			Console.WriteLine("adios");
+			Console.WriteLine("adios");*/
+
+			//ARRAY
+
+			char[] vocals = new char[26];
+
+            char x = 'a';
+            for (int i = 0; i < vocals.Length; i++)
+            {
+					
+					Thread.Sleep(250);
+					Console.Write(i);
+					Console.Write(x);
+
+                vocals[i] = x;
+					x++;
+					
+					Console.WriteLine();
+			}
+
+			Console.WriteLine();
+
+			foreach (char letra in vocals)
+            {
+                Thread.Sleep(250);
+                Console.Write(letra);
+            }
+            Console.Write(" este es el array completo: ");
+			Console.WriteLine(vocals);
 
 
 
-			Console.ReadKey();
+
+
+            Console.ReadKey();
 
 
 
