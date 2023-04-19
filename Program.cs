@@ -258,7 +258,7 @@ namespace HelloWorld
         }
         //LOS METODOS SE DECLARAN AQUI, FUERA DEL MAIN
 
-        /*static void Saludo()
+        static void Saludo()
 
 		{
 			Console.WriteLine("¿Cual es tu nombre?");
@@ -266,7 +266,7 @@ namespace HelloWorld
 			Console.WriteLine("¿Cuale es tu edad?");
 			int edad = int.Parse(Console.ReadLine());
 			Console.WriteLine("Bienvenido {0}, tu edad es {1} años ", name, edad);
-		}*/
+		}
     }
 }
 
