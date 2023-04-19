@@ -7,11 +7,11 @@ using System.IO;
 
 namespace HelloWorld
 {
-	class CiclosYCondicionales
-	{
-		static void Main(string[] args)
-		{
-			/*for (int i = 0; i <= 2; i++)
+    class CiclosYCondicionales
+    {
+        static void Main(string[] args)
+        {
+            /*for (int i = 0; i <= 2; i++)
 			{
 				for (int x = 0; x <= 5; x++)
 				{
@@ -79,9 +79,9 @@ namespace HelloWorld
 
 			}*/
 
-			// NOMBRE INTERMITENTE
+            // NOMBRE INTERMITENTE
 
-			/* string nombre = "Orion Ra ";
+            /* string nombre = "Orion Ra ";
 
 			 for (int i = 0; i <= 3; i++)
 			 {
@@ -94,9 +94,9 @@ namespace HelloWorld
 				 Console.Clear();
 			 }*/
 
-			//ALFABETO
+            //ALFABETO
 
-			/*for (char i = 'a'; i <= 'z'; i++)
+            /*for (char i = 'a'; i <= 'z'; i++)
 			{
 				Thread.Sleep(300);
 				Console.Write(" " + i + " ");
@@ -104,10 +104,10 @@ namespace HelloWorld
 
 			Console.WriteLine();*/
 
-			//ARRAY EMPLEADOS
+            //ARRAY EMPLEADOS
 
 
-			/* string[] emp = new string[5];
+            /* string[] emp = new string[5];
 
 			 emp[0] = "pedro";
 			 emp[1] = "juan";
@@ -123,9 +123,9 @@ namespace HelloWorld
 			 }*/
 
 
-			//MATRIZ 
+            //MATRIZ 
 
-			/* int[,] num = new int[3, 3];
+            /* int[,] num = new int[3, 3];
 
 			 for (int fila = 0; fila < 3; fila++)
 			 {
@@ -153,18 +153,18 @@ namespace HelloWorld
 			 }
 			 Console.WriteLine();*/
 
-			//OTRA OFRMA DE DECLARAR UN ARRAY
+            //OTRA OFRMA DE DECLARAR UN ARRAY
 
-			/* string[] gente = new string[] { "pedrito", "jacinta", "carmen", "antonio" };
+            /* string[] gente = new string[] { "pedrito", "jacinta", "carmen", "antonio" };
 			 foreach (string nom in gente)
 			 {
 				 Thread.Sleep(300);
 				 Console.WriteLine(nom);
 			 }*/
 
-			//OBJETO RANDOM
+            //OBJETO RANDOM
 
-			/*Console.WriteLine("dame el numero inicial");
+            /*Console.WriteLine("dame el numero inicial");
 			int num1 = Convert.ToInt32(Console.ReadLine());
 
 			Console.WriteLine("dame el numero final");
@@ -177,9 +177,9 @@ namespace HelloWorld
 			Thread.Sleep(250);
 			Console.WriteLine(numR);*/
 
-			//PRACTICA
+            //PRACTICA
 
-			/*Random x = new Random();
+            /*Random x = new Random();
 
 			int a = x.Next(0, 5);
 
@@ -212,9 +212,9 @@ namespace HelloWorld
 
 			Console.WriteLine("adios");*/
 
-			//ARRAY
+            //ARRAY
 
-			char[] vocals = new char[26];
+            /*char[] vocals = new char[26];
 
 			char x = 'a';
 			for (int i = 0; i < vocals.Length; i++)
@@ -238,11 +238,11 @@ namespace HelloWorld
 				Console.Write(letra);
 			}
 			Console.Write(" este es el array completo: ");
-			Console.WriteLine(vocals);
+			Console.WriteLine(vocals);*/
 
-			// CREAR ARCHIVOS
+            // CREAR ARCHIVOS
 
-			TextWriter archivo;
+            /*TextWriter archivo;
 			archivo = new StreamWriter("archivo.txt");
 			string mensaje = Console.ReadLine();
 			archivo.WriteLine(mensaje);
@@ -250,30 +250,83 @@ namespace HelloWorld
 			Console.Clear();
 			Console.WriteLine("SE HA GUARDADO EL ARCHIVO");
 			
+			// LEER ARCHIVO
 			
-			
+			TextReader Leerarchivo;
+			Leerarchivo = new StreamReader("archivo.txt");
+			Console.WriteLine(Leerarchivo.ReadToEnd());
+			Leerarchivo.Close();*/
+
+            // AREGAR IFO AL ARCHIVO
+
+            /*StreamWriter archivox = File.AppendText("archivo.txt");
+			string mensaje = Console.ReadLine();
+			archivox.WriteLine(mensaje);
+			archivox.Close();
+			Console.Clear();
+			Console.WriteLine("SE HA GUARDADO EL ARCHIVO");*/
+
+            // METODO CREAR AECHIVO
+
+            Crear_archivo();
+
+            Leer_archivo();
 
 
-			Console.ReadKey();
+            Console.ReadKey();
 
 
 
-		}
+        }
 
 
 
-		//LOS METODOS SE DECLARAN AQUI, FUERA DEL MAIN
+        //LOS METODOS SE DECLARAN AQUI, FUERA DEL MAIN
 
-		static void Saludo()
+        static void Saludo()
 
-		{
-			Console.WriteLine("¿Cual es tu nombre?");
-			string name = Console.ReadLine();
-			Console.WriteLine("¿Cuale es tu edad?");
-			int edad = int.Parse(Console.ReadLine());
-			Console.WriteLine("Bienvenido {0}, tu edad es {1} años ", name, edad);
-		}
-	}
+        {
+            Console.WriteLine("¿Cual es tu nombre?");
+            string name = Console.ReadLine();
+            Console.WriteLine("¿Cuale es tu edad?");
+            int edad = int.Parse(Console.ReadLine());
+            Console.WriteLine("Bienvenido {0}, tu edad es {1} años ", name, edad);
+        }
+
+        static void Crear_archivo()
+
+        {
+            Console.WriteLine("Nombre y extension del archivo que se creara o modificara");
+            string arch = Console.ReadLine();
+            StreamWriter archivo = File.AppendText(arch);
+            Console.WriteLine("Escribe el texto que contendra el archivo");
+            string mensaje = Console.ReadLine();
+            archivo.WriteLine(mensaje);
+            archivo.Close();
+            Console.Clear();
+            Console.WriteLine("El archivo se ha creado correctamente");
+
+        }
+
+        static void Leer_archivo()
+
+        {
+            Console.WriteLine("Nombre y extension del archivo que se leera");
+            string arch = Console.ReadLine();
+            TextReader Leer;
+            Leer = new StreamReader(arch);
+            Console.WriteLine(Leer.ReadToEnd());
+        }
+
+
+
+
+
+
+
+
+    }
+
 }
 
 
