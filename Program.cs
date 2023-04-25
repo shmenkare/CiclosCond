@@ -273,6 +273,29 @@ namespace HelloWorld
             Leer_archivo();
 
 
+            // POTENCIACION
+
+            int num = 2;
+            int exp = 10;
+            int resul = 0;
+
+            for (int i = 1; i <= exp; i++)
+            {
+                if (i == 1)
+                {
+                    resul = num;
+                }
+                else
+                {
+                    num *= resul;
+                }
+
+            }
+
+            Console.WriteLine("el resultado de {0} elevado a la {1} es: {2}", resul, exp, num);
+
+
+
             Console.ReadKey();
 
 
